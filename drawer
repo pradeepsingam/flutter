@@ -1,0 +1,65 @@
+import 'package:flutter/material.dart';
+void main(){
+  runApp(new MaterialApp(
+    home: new MyApp(),
+  ));
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text("Welcome"),
+      ),
+      drawer: Drawer(
+        elevation: 200.0,
+        child: Column(
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text("Pradeep"),
+              accountEmail: Text("pradeep@gmail.com"),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.red,
+                child: Text("P",style: TextStyle(fontSize: 60.0, color: Colors.white70),),
+              ),
+            ),
+            ListTile(
+              title: Text("Inbox"),
+              leading: Icon(Icons.mail),
+            ),
+            Divider(
+              height: 0.5,
+            ),
+            ListTile(
+              title: Text("Sent"),
+              leading: Icon(Icons.mail_outline),
+            ),
+            Divider(
+              height: 0.5,
+            ),
+            ListTile(
+              title: Text("Trash"),
+              leading: Icon(Icons.transfer_within_a_station_sharp),
+            ),
+            Divider(
+              height: 0.5,
+            ),
+            ListTile(
+              title: Text("Draft"),
+              leading: Icon(Icons.drafts),
+            ),
+            Divider(
+              height: 0.5,
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
